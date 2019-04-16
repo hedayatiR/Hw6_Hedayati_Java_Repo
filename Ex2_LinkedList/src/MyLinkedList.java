@@ -74,4 +74,35 @@ public class MyLinkedList {
 
     }
     // ----------------------------------------------------------
+    public int indexOf(Object o) {
+        int index = 0;
+        if (o == null) {
+            for (Node x = first; x != null; x = x.next) {
+                if (x.data == null)
+                    return index;
+                index++;
+            }
+        } else {
+            for (Node x = first; x != null; x = x.next) {
+                if (o.equals(x.data))
+                    return index;
+                index++;
+            }
+        }
+        return -1;
+    }
+    // ----------------------------------------------------------
+    public boolean isEmpty() {
+        return (size == 0);
+    }
+    // ----------------------------------------------------------
+    public void display() {
+        System.out.format("[");
+        Node x = first;
+        for (; x.next != null; x = x.next) {
+            System.out.format("%d, ", x.data);
+        }
+        System.out.format("%d]\n", x.data);
+    }
+    // ----------------------------------------------------------
 }
