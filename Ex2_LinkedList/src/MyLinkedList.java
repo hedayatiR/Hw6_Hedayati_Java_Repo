@@ -51,5 +51,27 @@ public class MyLinkedList {
         }
     }
     // ----------------------------------------------------------
+	    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            System.out.println("Error: index is out of bound!");
+            return;
+        }
+        else if (index==0){
+            first = first.next;
+            size--;
+        }
 
+        else{
+            Node currentNode = first;
+            // forward index-1 steps
+            for (int i = 0; i < (index - 1); i++) {
+                currentNode = currentNode.next;
+            }
+
+            currentNode.next = currentNode.next.next;
+            size--;
+        }
+
+    }
+    // ----------------------------------------------------------
 }
