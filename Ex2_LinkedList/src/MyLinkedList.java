@@ -96,13 +96,14 @@ public class MyLinkedList {
         return (size == 0);
     }
     // ----------------------------------------------------------
-    public void display() {
-        System.out.format("[");
+    public String toString(){ //write this instead of display
+        String str="[";
         Node x = first;
         for (; x.next != null; x = x.next) {
-            System.out.format("%d, ", x.data);
+            str += x.data.toString() + ", ";
         }
-        System.out.format("%d]\n", x.data);
+        str += x.data.toString() + "]";
+
+        return str;
     }
-    // ----------------------------------------------------------
 }
